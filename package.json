@@ -1,0 +1,49 @@
+{
+  "name": "mabiki",
+  "version": "1.0.0",
+  "description": "Provides throttle and debounce",
+  "main": "lib/mabiki.js",
+  "module": "module/mabiki.js",
+  "types": "lib/mabiki.d.ts",
+  "repository": "https://github.com/hokaccha/mabiki",
+  "homepage": "https://github.com/hokaccha/mabiki",
+  "bugs": {
+    "url": "https://github.com/hokaccha/mabiki/issues"
+  },
+  "author": "Kazuhito Hokamura",
+  "license": "MIT",
+  "sideEffects": false,
+  "keywords": [
+    "debounce",
+    "throttle"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib/",
+    "module/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "tsc -p . && tsc -p ./tsconfig.module.json",
+    "clean": "rm -rf lib module",
+    "prepublishOnly": "npm run clean && npm run build",
+    "lint": "eslint --max-warnings 0 --ext .js,.ts .",
+    "fix": "eslint --fix --ext .js,.ts .",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.3",
+    "typescript": "^4.2.3"
+  }
+}
