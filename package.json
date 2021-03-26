@@ -1,6 +1,6 @@
 {
   "name": "mabiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides throttle and debounce",
   "main": "./lib/mabiki.js",
   "module": "./module/mabiki.js",
