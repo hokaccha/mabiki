@@ -162,7 +162,8 @@ export function debounce<T extends (...args: any) => any>(
   }
 
   function remainingWait(time: number): number {
-    // @ts-expect-error
+    if (lastCallTime === undefined) return 0;
+
     const timeSinceLastCall = time - lastCallTime;
     const timeSinceLastInvoke = time - lastInvokeTime;
     const timeWaiting = waitValue - timeSinceLastCall;
@@ -171,7 +172,8 @@ export function debounce<T extends (...args: any) => any>(
   }
 
   function shouldInvoke(time: number): boolean {
-    // @ts-expect-error
+    if (lastCallTime === undefined) return true;
+
     const timeSinceLastCall = time - lastCallTime;
     const timeSinceLastInvoke = time - lastInvokeTime;
 
@@ -179,10 +181,7 @@ export function debounce<T extends (...args: any) => any>(
     // trailing edge, the system time has gone backwards and we're treating
     // it as the trailing edge, or we've hit the `maxWait` limit.
     return (
-      lastCallTime === undefined ||
-      timeSinceLastCall >= waitValue ||
-      timeSinceLastCall < 0 ||
-      (maxWait !== null && timeSinceLastInvoke >= maxWait)
+      timeSinceLastCall >= waitValue || timeSinceLastCall < 0 || (maxWait !== null && timeSinceLastInvoke >= maxWait)
     );
   }
 
