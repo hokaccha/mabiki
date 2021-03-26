@@ -13,11 +13,11 @@ $ npm install mabiki
 ```javascript
 import { debounce, throttle } from "mabiki";
 
-window.addEventListener("scroll", debounce() => {
+window.addEventListener("scroll", debounce(() => {
   // do something
-}, 200);
+}, 200));
 
-window.addEventListener("scroll", throttle() => {
+window.addEventListener("scroll", throttle(() => {
   // do something
-}, 200);
+}, 200));
 ```
