@@ -2,8 +2,13 @@
   "name": "mabiki",
   "version": "1.0.0",
   "description": "Provides throttle and debounce",
-  "main": "lib/mabiki.js",
-  "module": "module/mabiki.js",
+  "main": "./lib/mabiki.js",
+  "module": "./module/mabiki.js",
+  "exports": {
+    "require": "./lib/mabiki.js",
+    "import": "./module/mabiki.js",
+    "default": "./lib/mabiki.js"
+  },
   "types": "lib/mabiki.d.ts",
   "repository": "https://github.com/hokaccha/mabiki",
   "homepage": "https://github.com/hokaccha/mabiki",
